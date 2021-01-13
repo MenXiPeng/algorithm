@@ -216,4 +216,67 @@ public class SingleLinkList {
 
     }
 
+
+    /*
+     检查链表中是否有环
+     定义快慢指针
+     快指针每次都比慢指针多走一部
+     当快指针遇到慢指针代表有环
+     错误想法：快指针 比慢指针多走一部，这种事平移操作，永远不会相遇
+     */
+    public boolean hasCycle(Student head) {
+        // 只存在一个节点不存在环
+        if (head == null || head.getNext() == null){
+            return false;
+        }
+        // 慢指针
+        Student po1 = head.getNext();
+        // 快指针
+        Student po2 = head.getNext().getNext();
+        while (true){
+            // 快节点走到头还没有发现环 则不存在换
+            if (po2 == null || po2.getNext() == null){
+                return false;
+            }
+            if (po1 == po2){
+                // 指针相遇则代表出现换
+                return true;
+            }
+            po1 = po1.getNext();            // 移动指针
+            po2 = po2.getNext().getNext();  // 快指针每次都多走一步
+        }
+    }
+
+    /*
+    查找中间节点 时间复杂度 O(n)
+    定义快慢指针
+    快指针始终是慢指针位置的 2 倍 同检查环
+     */
+    public int getMiddleNode(Student head){
+        // 头节点为 null 不存在中间节点
+        if (head == null){
+            return 0;
+        }
+
+        if(head.getNext() == null){
+            return head.getNo();
+        }
+
+        // 慢指针
+        Student po1 = head.getNext();
+        Student po2 = head.getNext().getNext();
+
+        while (true){
+
+            if (po2 == null || po2.getNext() == null){
+                return po1.getNo();
+            }
+
+            po1 = po1.getNext();
+            po2 = po2.getNext().getNext();
+
+        }
+
+    }
+
 }
