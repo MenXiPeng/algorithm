@@ -3,10 +3,9 @@ package org.example;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 /**
- * 描述：
+ * 描述：单向链表
  *
  * @author menxipeng by 2021/1/6
  */
