@@ -1,4 +1,4 @@
-package org.example;
+package org.example.structure;
 
 /**
  * 描述：基于数组实现栈

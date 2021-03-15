@@ -1,7 +1,4 @@
-package org.example;
-
-import java.util.Queue;
-import java.util.concurrent.ArrayBlockingQueue;
+package org.example.structure;
 
 public class QueueForArrayList {
 
